@@ -1,0 +1,111 @@
+// breakpoints
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+
+// media queries
+
+// With double breakpoints i.e (`min-width` and `max-width`)
+@mixin breakpoints($canvas:xs) {
+	@if $canvas == xs {
+		@media (max-width: $sm) { @content; }
+	}
+	@else if $canvas == sm {
+		@media (min-width: $sm) and (max-width: $md) { @content; }
+	}
+	@else if $canvas == md {
+		@media (min-width: $md) and (max-width: $lg) { @content; }
+	}
+	@else if $canvas == lg {
+		@media (min-width: $lg) and (max-width: $xl) { @content; }
+	}
+	@else if $canvas == xl {
+		@media (min-width: $xl) { @content; }
+	}
+}
+
+/* 
+xs: (max-width: 576px)
+sm: (min-width: 576px) and (max-width: 768px)
+md: (min-width: 768px) and (max-width: 992px)
+lg: (min-width: 992px) and (max-width: 1200px)
+xl: (min-width: 1200px)
+*/
+
+// With sigle breakpoint i.e (only `min-width`)
+@mixin breakpoint($canvas:xs) {
+	@if $canvas == xs {
+		@media (max-width: $sm) { @content; }
+	}
+	@else if $canvas == sm {
+		@media (min-width: $sm) { @content; }
+	}
+	@else if $canvas == md {
+		@media (min-width: $md) { @content; }
+	}
+	@else if $canvas == lg {
+		@media (min-width: $lg) { @content; }
+	}
+	@else if $canvas == xl {
+		@media (min-width: $xl) { @content; }
+	}
+}
+
+/* 
+xs: (max-width: 576px)
+sm: (min-width: 576px)
+md: (min-width: 768px)
+lg: (min-width: 992px)
+xl: (min-width: 1200px)
+*/
+
+// Applies styling to smaller width devices than passed
+@mixin down($canvas:xs) {
+	@if $canvas == xs {
+		@media (max-width: $sm) { @content; }
+	}
+	@else if $canvas == sm {
+		@media (max-width: $md) { @content; }
+	}
+	@else if $canvas == md {
+		@media (max-width: $lg) { @content; }
+	}
+	@else if $canvas == lg {
+		@media (max-width: $xl) { @content; }
+	}
+}
+
+// Applies styling to greater width devices than passed
+@mixin up($canvas:xs) {
+	@if $canvas == sm {
+		@media (min-width: $sm) { @content; }
+	}
+	@else if $canvas == md {
+		@media (min-width: $md) { @content; }
+	}
+	@else if $canvas == lg {
+		@media (min-width: $lg) { @content; }
+	}
+	@else if $canvas == xl {
+		@media (min-width: $xl) { @content; }
+	}
+}
+
+// Super light grid - it works with the .cd-container class inside style.scss
+
+@mixin column($percentage, $float-direction:left) {
+	width: 100% * $percentage;
+	float: $float-direction;
+}
+
+// Custom grid system
+@for $column from 1 through 12 {
+	$width: percentage(1 / $column);
+	.column-#{$column} {
+		display: inline-block !important;
+		width: $width - 0.3% !important;
+		margin: 0 !important;
+	}
+}

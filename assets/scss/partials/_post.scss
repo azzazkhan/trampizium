@@ -1,0 +1,111 @@
+.main-wrapper {
+	.gridify-content {
+		.content-wrapper {
+			.post-item {
+				width: 97%;
+				margin: 30px auto;
+				padding: 15px 10px;
+				border: 2px solid black;
+				.thumbnail-container {
+					padding: 0;
+					img {
+						margin: 0 auto;
+						border: 0;
+						width: 50%;
+						margin-bottom: 20px;
+						@include up(md) {
+							width: 150px;
+							margin: 0 auto;
+						}
+						border-radius: 0;
+						@include box-shadows(0 1px 0 rgba(0,0,0,0.25));
+					}
+				}
+				.content-container {
+					padding: 0;
+					.post-title {
+						margin: 0;
+						padding: 0;
+						a {
+							color: #206ba4;
+							font-size: 22.1px;
+							line-height: auto;
+							font-weight: 700;
+							text-decoration: none;
+							display: block;
+							white-space: nowrap;
+							overflow: hidden !important;
+							text-overflow: ellipsis;
+							text-decoration: none !important;
+							&:hover {
+								color: #54a4de;
+							}
+							&::after {
+								content: " Free Download";
+							}
+						}
+					}
+					.post-std {
+						overflow: hidden;
+						margin: 0;
+						padding: 0;
+						margin: 10px auto;
+						text-align: justify;
+						font-size: 13px;
+						color: #333;
+						.post-date {
+							background: transparent url("../img/post-std.png") no-repeat left -42px;
+							padding-left: 10px;
+							float: left;
+							.ext {
+								background: transparent url("../img/post-std.png") no-repeat right -42px;
+								padding: 0 15px 0 0;
+								color: #fff;
+								font-weight: bold;
+								text-transform: uppercase;
+								float: none;
+							}
+						}
+						.post-date .ext,
+						.post-info {
+							height: 42px;
+							line-height: 32px;
+							display: block;
+						}
+						.post-info {
+							background: transparent url('../img/post-std.png') no-repeat right top;
+							padding-left: 32px;
+							padding-left: 10px;
+							overflow: hidden;
+							color: #bbb;
+							@include text-shadow(1px, 1px, 1px, #fff);
+							a {
+								line-height: 32px;
+								font-weight: bold;
+								color: #999;
+								text-decoration: underline;
+								outline: 0;
+								display: inline-block;
+								margin-right: 5px;
+								@include text-shadow(1px, 1px, 1px, #fff);
+								&:hover {
+									text-decoration: none;
+								}
+								&::after {
+									content: ",";
+								}
+								&:last-of-type::after {
+									content: "";
+								}
+							}
+						}
+					}
+					.post-content {
+						font-size: 13px;
+						color: #333;
+					}
+				}
+			}
+		}
+	}
+}

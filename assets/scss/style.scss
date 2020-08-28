@@ -1,0 +1,94 @@
+@import 'variables';
+@import 'mixins';
+@import 'layout';
+@import 'utilities';
+
+*, *::before, *::after {
+	@include box-sizing(border-box);
+}
+
+html, body {
+	color: map-get(map-get($font, primary), color);
+	overflow-x: hidden !important;
+	font-family: map-get(map-get($font, primary), family);
+	font-size: map-get(map-get($font, primary), size);
+	font-weight: map-get(map-get($font, primary), weight);
+	padding: 0;
+	margin: 0;
+}
+
+.main-wrapper {
+	background: #f0f0f0;
+	background: url('../img/sections/call-of-duty-4.jpg') no-repeat center center fixed;
+	// background: url('../img/sections/assassins-creed-identity.jpg') no-repeat center center fixed;
+	// background: url('../img/sections/assassins-creed.jpg') no-repeat center top fixed;
+	// background: url('../img/sections/crysis-3.jpg') no-repeat center center fixed;
+	// background: url('../img/sections/tomb-raider-eternity.jpg') no-repeat center bottom fixed;
+	background-size: cover;
+	&, & > .gridify-content {
+		overflow-x: hidden !important;
+		min-width: 100%;
+		padding: 0;
+		margin: 0;
+	}
+	.clear-block:after {
+		content: ".";
+		display: block;
+		clear: both;
+		visibility: hidden;
+		line-height: 0;
+		height: 0;
+	}
+	.alignleft {
+		float: left;
+	}
+	.clearFieldBlurred {
+		font-style: italic;
+	}
+	.clearField {
+		color: #aaa;
+		border: 1px solid #ccc;
+		background: #8f8f8f;
+		font-weight: normal;
+	}
+	.gridify-content {
+		background: transparent url("../img/bg.png") repeat-x center bottom;
+		.content-wrapper {
+			position: relative;
+			background: #fff url("../img/bg-main-r.jpg") no-repeat right top;
+			min-width: 400px;
+			max-width: 1200px;
+			width: $xsc;
+			@include breakpoint(sm) { width: $smc; }
+			@include breakpoint(md) { width: $mdc; }
+			@include breakpoint(lg) { width: $lgc; }
+			@include breakpoint(xl) { width: $xlc; }
+			min-height: 700px;
+			margin: 20px auto;
+			border-top: 1px solid #fff;
+			border-radius: 4px;
+			@include box-shadow(0, 20px, 40px, -20px);
+			.content-column, .sidebar-column {
+				min-height: 700px;
+				border: 0;
+				padding: 0;
+				margin: 0;
+			}
+			.content-column {
+				border-radius: 4px 0 0 0;
+			}
+		}
+		// For tabets and greater screen size devices
+		@include up(md) {
+			.no-padding { padding: 0; }
+			.no-radius { border-radius: 0; }
+		}
+	}
+}
+
+@import "./partials/logo";
+@import "./partials/navigation";
+@import "./partials/post";
+@import "./partials/pagination";
+@import "./partials/sidebar";
+@import "./partials/footer";

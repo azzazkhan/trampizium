@@ -1,0 +1,59 @@
+.main-wrapper {
+	.gridify-content {
+		.content-wrapper {
+			.nav-footer {
+				width: 100%;
+				background: #eee;
+				z-index: 25;
+				border-bottom: 1px solid #fff;
+				margin: 0 auto;
+				font-size: 13px;
+				color: #333;
+				width: 100%;
+				.menu-list {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+					.menu-item {
+						margin-left: 10px;
+						padding: 10px 0;
+						position: relative;
+						display: inline-block;
+						line-height: normal;
+						a {
+							color: #666;
+							font-size: 85%;
+							font-weight: bold;
+							padding: 4px 10px;
+							border-radius: 20px;
+							text-decoration: none;
+							display: block;
+							position: relative;
+							&:hover {
+								color: #54a4de;
+							}
+						}
+						&:hover a{
+							background: #206ba4;
+							color: #fff;
+						}
+					}
+				}
+			}
+			#footer {
+				background: #ddd;
+				padding-top: 20px;
+				width: 100%;
+			}
+			#copyright {
+				width: 100%;
+				background: #cdcdcd;
+				padding: 1em 0;
+				font-size: 110%;
+				line-height: 150%;
+				text-align: center;
+				@include text-shadow(0, 1px, 1px, #fff);
+			}
+		}
+	}
+}

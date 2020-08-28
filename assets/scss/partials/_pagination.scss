@@ -1,0 +1,57 @@
+.main-wrapper {
+	.gridify-content {
+		.content-wrapper {
+			.pagination {
+				padding: 5px 10px;
+				color: #333;
+				font-size: 115%;
+				font-weight: bold;
+				margin: 0;
+				a, .current, .dots, .page {
+					float: left;
+					padding: 5px 10px;
+					margin: 2px;
+					border-radius: 5px;
+				}
+				a, .page {
+					text-decoration: none;
+					border: 1px solid #ddd;
+					background-color: #fff;
+					font-weight: normal;
+					color: #999;
+				}
+				a:hover {
+					border: 1px solid #206ba4;
+					background-color: #206ba4;
+					color: #fff;
+				}
+				.current {
+					border: 1px solid #000;
+					color: #fff;
+					background: #333 url("../img/bg-nav-d.png") repeat-x center -2px;
+				}
+				/* .current,
+				.dots,
+				.pages {
+					padding: 5px 10px;
+					margin: 2px;
+					border-radius: 5px;
+				}
+				.current {
+					float: left;
+					border: 1px solid #000;
+					color: #fff;
+					background: #999 url("../../img/bg-nav-d.png") repeat-x center -2px;
+				}
+				a, .pages {
+					text-decoration: none;
+					border: 1px solid #ddd;
+					background-color: #fff;
+					font-weight: normal;
+					color: #999;
+					outline: 0;
+				} */
+			}
+		}
+	}
+}

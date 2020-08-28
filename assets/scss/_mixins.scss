@@ -1,0 +1,81 @@
+@mixin transition($property: all, $duration: .2s, $easing: ease) {
+	-webkit-transition: $property $duration $easing;
+	-moz-transition: $property $duration $easing;
+	transition: $property $duration $easing;
+}
+
+@mixin transform($methods) {
+	-webkit-transform: $methods;
+	-moz-transform: $methods;
+	transform: $methods;
+}
+
+@mixin box-sizing($sizing) {
+	-webkit-box-sizing: $sizing;
+	-moz-box-sizing: $sizing;
+	-ms-box-sizing: $sizing;
+	-o-box-sizing: $sizing;
+	box-sizing: $sizing;
+}
+
+@mixin placeholder() {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::placeholder {
+		@content;
+	}
+}
+
+@mixin text-shadow($y-axis: 1px, $x-axis: 2px, $blur: 6px, $color: rgba(0, 0, 0, 0.60)) {
+	-webkit-text-shadow: $y-axis $x-axis $blur $color;
+	-moz-text-shadow: $y-axis $x-axis $blur $color;
+	text-shadow: $y-axis $x-axis $blur $color;
+}
+
+@mixin text-shadows($shadow) {
+	-webkit-text-shadow: $shadow;
+	-moz-text-shadow: $shadow;
+	text-shadow: $shadow;
+}
+
+@mixin box-shadow($x-axis: 0, $y-axis: 20px, $blur: 40px, $spread: -20px, $color: rgba(0, 0, 0, 0.60)) {
+	-webkit-box-shadow: $x-axis $y-axis $blur $spread $color;
+	-moz-box-shadow: $x-axis $y-axis $blur $spread $color;
+	box-shadow: $x-axis $y-axis $blur $spread $color;
+}
+
+@mixin box-shadows($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin center($xy:xy) {
+	@if $xy == xy {
+		left: 50%;
+		top: 50%;
+		bottom: auto;
+		right: auto;
+		@include transform(translateX(-50%) translateY(-50%));
+	}
+	@else if $xy == x {
+		left: 50%;
+		right: auto;
+		@include transform(translateX(-50%));
+	}
+	@else if $xy == y {
+		top: 50%;
+		bottom: auto;
+		@include transform(translateY(-50%));
+	}
+}

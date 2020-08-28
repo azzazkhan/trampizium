@@ -1,0 +1,90 @@
+.main-wrapper {
+	.gridify-content {
+		.content-wrapper {
+			.sidebar-column {
+				position: relative;
+				min-height: 700px;
+				min-height: 150px;
+				padding: 10px 0;
+				margin: 0;
+				border: 0;
+				border-radius: 0 4px 0 0;
+				.sidebar-content .widget-wrapper {
+					padding: 0 10px;
+					margin: 10px 0 20px;
+					.form-wrapper {
+						position: relative;
+						margin: 0;
+						overflow: hidden;
+						.submit, fieldset {
+							background-image: url("../img/search.png");
+							border: 0;
+							outline: 0;
+							padding: 0;
+							display: block;
+						}
+						fieldset {
+							background: transparent url("../img/search.png") no-repeat top left;
+							height: 34px;
+							.text {
+								color: #333;
+								border: 0;
+								padding: 0 40px 0 0;
+								margin: 7px 0 0 35px;
+								width: 100%;
+								background: transparent;
+								outline: 0;
+								display: block;
+								font-size: 120%;
+								@include placeholder {
+									color: #aaaaaa;
+									font-style: italic;
+								}
+							}
+						}
+						.submit {
+							background: transparent url("../img/search.png") no-repeat top right;
+							height: 34px;
+							width: 55px;
+							float: right;
+							display: block;
+							&:hover {
+								background-position: bottom right;
+							}
+						}
+					}
+					.title {
+						position: relative;
+						h3 {
+							background: transparent url("../img/block-t.png") no-repeat center top;
+							margin: 0;
+							padding: 7px 10px;
+							font-weight: bold;
+							font-size: 125%;
+							text-transform: uppercase;
+							color: #fff;
+							@include text-shadow(0, -1px, 0, rgba(0, 0, 0, 0.50));
+							letter-spacing: .3px;
+							border-radius: 7px;
+							// border: 1px solid white;
+						}
+						.bl {
+							background: transparent url("../img/block-t.png") no-repeat bottom right;
+							height: 22px;
+							width: 60px;
+							position: absolute;
+							bottom: 0;
+							right: 0;
+						}
+						.br {
+							background: transparent url("../img/block-t.png") no-repeat bottom left;
+							height: 22px;
+							margin-top: -3px;
+							margin-right: 60px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

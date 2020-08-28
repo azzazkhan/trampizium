@@ -1,0 +1,95 @@
+.main-wrapper {
+	.gridify-content {
+		.navigation-wrapper {
+			@include breakpoint(sm) { width: $smc; }
+			@include breakpoint(md) { width: $mdc; }
+			@include breakpoint(lg) { width: $lgc; }
+			@include breakpoint(xl) { width: $xlc; }
+			width: $xsc;
+			margin: 0 auto;
+			@include box-shadow(0, 12px, 20px, -10px, rgba(0, 0, 0, 0.80));
+			.content-navigation {
+				background: #cecece;
+				background: url('../img/bg-nav.png');
+				background-repeat: repeat-x;
+				background-size: contain;
+				margin: 0;
+				border: 0;
+				.menu-item {
+					position: relative;
+					border: 0;
+					@include up(md) {
+						border-top: 1px solid white;
+						border-right: 1px solid white;
+					}
+					@include box-shadow(1px, -1px, 1px, -1px);
+					&:first-of-type a { margin: 0; }
+					&.home-item {
+						& > a {
+							padding-left: 30px;
+						}
+						.home {
+							position: absolute;
+							top: 0;
+							left: 0;
+							background: transparent url("../img/icons.png") no-repeat -46px -6px;
+							display: inline-block;
+							height: 30px;
+							width: 30px;
+						}
+					}
+					& > a {
+						color: #5a5a5a;
+						font-weight: 700;
+						font-size: 14px;
+						padding: 7px 15px;
+						margin: 0;
+						display: block;
+						margin-left: 1px;
+						border: 0;
+						outline: none;
+						@include box-shadows(none);
+						@include breakpoint(lg) {
+							&:hover {
+								color: #2d8ac7;
+								background: white;
+							}
+						}
+						&:active {
+							background: #2d8ac7;
+							color: white;
+						}
+					}
+					.dropdown-menu a {
+						font-weight: 400;
+					}
+					&.active {
+						border: 0;
+						@include up(md) {
+							border-top: 1px solid rgba(0, 0, 0, 0.99);
+							// border-right: 1px solid rgba(0, 0, 0, 0.99);
+						}
+						&::after {
+							position: absolute;
+							content: "";
+							background: #1e1e1e;
+							height: 10px;
+							width: 10px;
+							z-index: 10;
+							bottom: -8px;
+							@include center(x);
+							@include transform(rotate(45deg) translateX(-50%));
+						}
+						& > a {
+							color: white;
+							border: 0;
+							z-index: 12;
+							background: #000 url('../img/nav-a.png') no-repeat left top;
+							@include box-shadows(0 !important);
+						}
+					}
+				}
+			}
+		}
+	}
+}
