@@ -17,6 +17,16 @@
     />
     <link rel="stylesheet" href="./assets/css/bootstrap-4-custom.min.css" />
     <link rel="stylesheet" href="./assets/css/style.min.css" />
+    <script>
+      window.onload = function () {
+        let anchors = document.querySelectorAll("a");
+            for (i = 0; i < anchors.length; i++) {
+              anchors[i].addEventListener("click", function (event) {
+                event.preventDefault();
+              })
+            }
+      }
+    </script>
   </head>
   <body>
     <div class="main-wrapper">
